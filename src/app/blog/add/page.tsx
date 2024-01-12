@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { Toaster, toast } from "react-hot-toast";
 
 const postBlog = async (title: string | undefined, description: string | undefined) => {
-  const res = await fetch(`http://localhost:3000/api/blog`, {
+  const res = await fetch(`${process.env.ROOT}/api/blog`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

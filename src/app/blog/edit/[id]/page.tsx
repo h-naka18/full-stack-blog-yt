@@ -9,7 +9,7 @@ const editBlog = async (
   description: string | undefined,
   id: number
 ) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+  const res = await fetch(`${process.env.ROOT}/api/blog/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -20,13 +20,13 @@ const editBlog = async (
 };
 
 const getBlogById = async (id: number) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${id}`);
+  const res = await fetch(`${process.env.ROOT}/api/blog/${id}`);
   const data = await res.json();
   return data.post;
 };
 
 const deleteBlog = async (id: number) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+  const res = await fetch(`${process.env.ROOT}/api/blog/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

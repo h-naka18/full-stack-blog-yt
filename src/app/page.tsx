@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { PostType } from './types';
 
 async function fetchAllBlogs() {
-  const res = await fetch(`http://localhost:3000/api/blog`, {
+  const res = await fetch(`${process.env.ROOT}/api/blog`, {
     cache: "no-store",
   });
   const data = await res.json();
