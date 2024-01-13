@@ -10,7 +10,6 @@ const postBlog = async (title: string | undefined, description: string | undefin
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify({ title, description }),
   });

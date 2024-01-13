@@ -13,7 +13,6 @@ const editBlog = async (
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify({ title, description, id }),
   });
@@ -21,11 +20,7 @@ const editBlog = async (
 };
 
 const getBlogById = async (id: number) => {
-  const res = await fetch(`${process.env.ROOT}/api/blog/${id}`{
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
+  const res = await fetch(`${process.env.ROOT}/api/blog/${id}`);
   const data = await res.json();
   return data.post;
 };
@@ -35,7 +30,6 @@ const deleteBlog = async (id: number) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
     },
   });
   return res.json();
