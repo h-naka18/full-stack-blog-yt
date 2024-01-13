@@ -5,6 +5,9 @@ import { PostType } from './types';
 async function fetchAllBlogs() {
   const res = await fetch(`${process.env.ROOT}/api/blog`, {
     cache: "no-store",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   });
   const data = await res.json();
   return data.posts;
